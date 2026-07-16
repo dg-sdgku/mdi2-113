@@ -54,5 +54,4 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.test.manifest)
     debugImplementation(libs.ui.tooling)
-    implementation("com.google.android.gms:play-services-wearable:20.0.1")
 }
