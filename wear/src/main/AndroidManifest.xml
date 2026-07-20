@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.BODY_SENSORS" android:maxSdkVersion="35" />
     <uses-permission android:name="android.permission.health.READ_HEART_RATE"
         tools:ignore="HealthConnectPolicy" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-feature android:name="android.hardware.type.watch" />
 

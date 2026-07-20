@@ -7,13 +7,13 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import edu.sdgku.wearfitness.shared.presentation.FitnessViewModel
 
 @Composable
-fun WearFitnessApp(
+fun MobileFitnessApp(
     fitnessViewModel: FitnessViewModel = viewModel()
 ) {
     val uiState by fitnessViewModel.uiState
         .collectAsStateWithLifecycle()
 
-    WearFitnessScreen(
+    FitnessScreen(
         uiState = uiState,
         onIncreaseGoal = {
             fitnessViewModel.increaseDailyGoal()
