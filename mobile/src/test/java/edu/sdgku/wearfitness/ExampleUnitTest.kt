@@ -1,4 +1,4 @@
-package edu.sdgku.stepcounter
+package edu.sdgku.wearfitness
 
 import org.junit.Test
 

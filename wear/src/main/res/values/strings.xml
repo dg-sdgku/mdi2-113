@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">StepCounter</string>
+    <string name="app_name">WearFitnessWatch</string>
     <string name="hello_world">Hello, %1$s!</string>
 </resources>

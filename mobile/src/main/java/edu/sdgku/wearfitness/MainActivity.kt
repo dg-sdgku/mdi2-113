@@ -1,4 +1,4 @@
-package edu.sdgku.stepcounter
+package edu.sdgku.wearfitness
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -22,8 +22,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
 
@@ -55,15 +55,11 @@ fun PhoneCompanionApp() {
         modifier = Modifier
             .fillMaxSize()
             .padding(24.dp),
-        verticalArrangement =
-            Arrangement.Center,
-        horizontalAlignment =
-            Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Wear Fitness",
-            style =
-                MaterialTheme.typography.headlineMedium
+            text = "Wear Fitness", style = MaterialTheme.typography.headlineMedium
         )
 
         Spacer(
@@ -71,9 +67,7 @@ fun PhoneCompanionApp() {
         )
 
         Text(
-            text = "Steps Goal",
-            style =
-                MaterialTheme.typography.titleMedium
+            text = "Steps Goal", style = MaterialTheme.typography.titleMedium
         )
 
         Spacer(
@@ -81,18 +75,15 @@ fun PhoneCompanionApp() {
         )
 
         Row(
-            verticalAlignment =
-                Alignment.CenterVertically,
-            horizontalArrangement =
-                Arrangement.Center
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
         ) {
             Button(
                 onClick = {
                     if (stepsGoal > 500) {
                         stepsGoal -= 500
                     }
-                }
-            ) {
+                }) {
                 Text("-")
             }
 
@@ -101,9 +92,7 @@ fun PhoneCompanionApp() {
             )
 
             Text(
-                text = stepsGoal.toString(),
-                style =
-                    MaterialTheme.typography.headlineSmall
+                text = stepsGoal.toString(), style = MaterialTheme.typography.headlineSmall
             )
 
             Spacer(
@@ -113,8 +102,7 @@ fun PhoneCompanionApp() {
             Button(
                 onClick = {
                     stepsGoal += 500
-                }
-            ) {
+                }) {
                 Text("+")
             }
         }
@@ -126,15 +114,10 @@ fun PhoneCompanionApp() {
         Button(
             onClick = {
                 sendStatus = "Sending..."
-                sendStepsGoalToWatch(context = context,
-                    stepsGoal = stepsGoal,
-                    onSuccess = {
-                        sendStatus = "Sent $stepsGoal to the watch"
-                    },
-                    onError = {errorMessage -> sendStatus = "Error: $errorMessage"}
-                )
-            }
-        ) {
+                sendStepsGoalToWatch(context = context, stepsGoal = stepsGoal, onSuccess = {
+                    sendStatus = "Sent $stepsGoal to the watch"
+                }, onError = { errorMessage -> sendStatus = "Error: $errorMessage" })
+            }) {
             Text("Send to Watch")
         }
 

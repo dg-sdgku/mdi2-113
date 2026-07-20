@@ -1,4 +1,4 @@
-package edu.sdgku.stepcounter.ui.theme
+package edu.sdgku.wearfitness.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

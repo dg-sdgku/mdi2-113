@@ -1,4 +1,4 @@
-package edu.sdgku.stepcounter.presentation
+package edu.sdgku.wearfitness.presentation
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -39,8 +39,8 @@ import androidx.wear.compose.material3.Button
 import androidx.wear.compose.material3.MaterialTheme
 import androidx.wear.compose.material3.Text
 
-    @Composable
-    fun WearFitnessApp(heartRateSensorValue: Int, hasHeartRateSensor: Boolean) {
+@Composable
+    fun WearFitnessApp(heartRateSensorValue: Int, hasHeartRateSensor: Boolean, stepsGoalFromPhone: Int) {
         val navController = rememberNavController()
         val context = LocalContext.current
 
@@ -52,8 +52,11 @@ import androidx.wear.compose.material3.Text
             mutableIntStateOf(25)
         }
 
-        var stepsGoal by remember {
-            mutableIntStateOf(10000)
+        var displayedStepsGoal by remember {
+            mutableIntStateOf(stepsGoalFromPhone)
+        }
+        LaunchedEffect(stepsGoalFromPhone) {
+            displayedStepsGoal = stepsGoalFromPhone
         }
 
         var caloriesGoal by remember {
@@ -144,7 +147,7 @@ import androidx.wear.compose.material3.Text
                     DailyProgressScreen(
                         steps = steps,
                         calories = calories,
-                        stepsGoal = stepsGoal,
+                        stepsGoal = displayedStepsGoal,
                         caloriesGoal = caloriesGoal,
                         onAddStep = {
                             steps++
@@ -168,13 +171,13 @@ import androidx.wear.compose.material3.Text
 
                 composable("goals") {
                     ModifyGoalScreen(
-                        stepsGoal = stepsGoal,
+                        stepsGoal = displayedStepsGoal,
                         caloriesGoal = caloriesGoal,
                         onDecreaseStepsGoal = {
-                            stepsGoal -= 500
+                            displayedStepsGoal -= 500
                         },
                         onIncreaseStepsGoal = {
-                            stepsGoal += 500
+                            displayedStepsGoal += 500
                         },
                         onDecreaseCaloriesGoal = {
                             caloriesGoal -= 50

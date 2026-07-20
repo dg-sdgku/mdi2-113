@@ -4,17 +4,17 @@ plugins {
 }
 
 android {
-    namespace = "edu.sdgku.stepcounter"
+    namespace = "edu.sdgku.wearfitness"
     compileSdk {
-        version = release(36) {
+        version = release(37) {
             minorApiLevel = 1
         }
     }
 
     defaultConfig {
-        applicationId = "edu.sdgku.stepcounter"
+        applicationId = "edu.sdgku.wearfitness"
         minSdk = 30
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
@@ -38,20 +38,20 @@ android {
 }
 
 dependencies {
-    implementation(platform(libs.compose.bom))
-    implementation(libs.activity.compose)
-    implementation(libs.compose.foundation)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.wear.tooling.preview)
     implementation(libs.compose.material3)
     implementation(libs.compose.ui.tooling)
-    implementation(libs.core.splashscreen)
-    implementation(libs.navigation.compose)
     implementation(libs.play.services.wearable)
-    implementation(libs.ui)
-    implementation(libs.ui.graphics)
-    implementation(libs.ui.tooling.preview)
-    implementation(libs.wear.tooling.preview)
-    androidTestImplementation(platform(libs.compose.bom))
-    androidTestImplementation(libs.ui.test.junit4)
-    debugImplementation(libs.ui.test.manifest)
-    debugImplementation(libs.ui.tooling)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    implementation(libs.androidx.navigation.compose)
 }

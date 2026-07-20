@@ -4,14 +4,16 @@ plugins {
 }
 
 android {
-    namespace = "edu.sdgku.stepcounter"
+    namespace = "edu.sdgku.wearfitness"
     compileSdk {
-        version = release(37)
+        version = release(37) {
+            minorApiLevel = 1
+        }
     }
 
     defaultConfig {
-        applicationId = "edu.sdgku.stepcounter.mobile"
-        minSdk = 35
+        applicationId = "edu.sdgku.wearfitness"
+        minSdk = 30
         targetSdk = 37
         versionCode = 1
         versionName = "1.0"

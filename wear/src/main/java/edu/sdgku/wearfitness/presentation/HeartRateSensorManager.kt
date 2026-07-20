@@ -1,4 +1,4 @@
-package edu.sdgku.stepcounter.presentation
+package edu.sdgku.wearfitness.presentation
 import android.Manifest
 import android.content.Context
 import android.content.Context.SENSOR_SERVICE

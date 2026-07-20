@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MDI2-113"
-include(":wear")
+rootProject.name = "WearFitness"
 include(":mobile")
+include(":wear")

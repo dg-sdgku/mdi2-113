@@ -1,10 +1,10 @@
-package edu.sdgku.stepcounter.presentation.theme
+package edu.sdgku.wearfitness.presentation.theme
 
 import androidx.compose.runtime.Composable
 import androidx.wear.compose.material3.MaterialTheme
 
 @Composable
-fun StepCounterTheme(
+fun WearFitnessTheme(
     content: @Composable () -> Unit
 ) {
     /**
