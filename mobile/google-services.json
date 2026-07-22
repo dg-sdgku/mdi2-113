@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "207665170366",
+    "project_id": "mdi2-113-wearfitness",
+    "storage_bucket": "mdi2-113-wearfitness.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207665170366:android:2c57ffeff4fa12a24e1bef",
+        "android_client_info": {
+          "package_name": "edu.sdgku.wearfitness"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpKVUucvZHhoVVlgmfASCERfk_TsjsY-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

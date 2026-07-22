@@ -1,6 +1,7 @@
 package edu.sdgku.wearfitness
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
@@ -24,14 +25,31 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import edu.sdgku.wearfitness.shared.data.FirebaseRepository
 
 class MainActivity : ComponentActivity() {
 
-    override fun onCreate(
-        savedInstanceState: Bundle?
-    ) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val repository = FirebaseRepository()
+
+        repository.updateDailyGoal(
+            dailyGoal = 555555,
+            onSuccess = {
+                Log.d(
+                    "SharedFirebase",
+                    "Goal updated from mobile"
+                )
+            },
+            onError = { exception ->
+                Log.e(
+                    "SharedFirebase",
+                    "Could not update goal",
+                    exception
+                )
+            }
+        )
         setContent {
             MaterialTheme {
                 PhoneCompanionApp()

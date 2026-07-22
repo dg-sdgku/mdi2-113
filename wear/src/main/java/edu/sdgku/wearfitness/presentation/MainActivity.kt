@@ -1,6 +1,7 @@
 package edu.sdgku.wearfitness.presentation
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
@@ -9,6 +10,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import com.google.android.gms.wearable.Wearable
 import edu.sdgku.wearfitness.presentation.theme.WearFitnessTheme
+import edu.sdgku.wearfitness.shared.data.FirebaseRepository
 
 
 class MainActivity : ComponentActivity() {
@@ -27,6 +29,12 @@ class MainActivity : ComponentActivity() {
         savedInstanceState: Bundle?
     ) {
         super.onCreate(savedInstanceState)
+        val repository = FirebaseRepository()
+
+        repository.listenToFitnessData(
+            onDataChanged = {fitnessData ->
+                Log.d("SharedFirebaseWear","Goal received: ${fitnessData.dailyGoal}")
+            })
         createNotificationChannel(this)
         heartRateSensorManager = HeartRateSensorManager(context = this, onHeartRateChanged = {
                         newHeartRate -> heartRate = newHeartRate
